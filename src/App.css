@@ -1,0 +1,829 @@
+/* ========== App Layout ========== */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 64px; /* tabbar height */
+}
+
+.app-main {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.page {
+  padding: 0 0 20px;
+}
+
+/* ========== Header ========== */
+.app-header {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: #fff;
+  padding: 16px 16px 12px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-logo {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.header-sub {
+  font-size: 12px;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+/* ========== TabBar ========== */
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  background: #fff;
+  border-top: 1px solid #eee;
+  z-index: 100;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.tab-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0 6px;
+  background: none;
+  color: #999;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.tab-btn.active {
+  color: #e74c3c;
+}
+
+.tab-icon {
+  font-size: 22px;
+  margin-bottom: 2px;
+}
+
+.tab-label {
+  font-size: 11px;
+}
+
+/* ========== HomePage ========== */
+.hero-banner {
+  background: linear-gradient(135deg, #fdf2f2, #fef5f5);
+  padding: 24px 16px;
+  text-align: center;
+  border-bottom: 1px solid #fde8e8;
+}
+
+.hero-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #c0392b;
+  margin-bottom: 6px;
+}
+
+.hero-desc {
+  font-size: 14px;
+  color: #888;
+}
+
+.section {
+  padding: 16px;
+}
+
+.section-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+  padding-left: 8px;
+  border-left: 3px solid #e74c3c;
+}
+
+/* Features */
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fafafa;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.feature-icon {
+  font-size: 24px;
+}
+
+.feature-label {
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+}
+
+/* ========== ShopCard ========== */
+.shop-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.shop-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.shop-card:active {
+  transform: scale(0.98);
+}
+
+.shop-card-img {
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.shop-card-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(231, 76, 60, 0.9);
+  color: #fff;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.shop-card-body {
+  padding: 12px;
+}
+
+.shop-card-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+.shop-card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.shop-card-area {
+  font-size: 13px;
+  color: #888;
+}
+
+.shop-card-rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 12px;
+}
+
+.stars-gold {
+  color: #f59e0b;
+  letter-spacing: 1px;
+}
+
+.rating-num {
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+  margin-left: 4px;
+}
+
+.review-count {
+  color: #aaa;
+  margin-left: 2px;
+}
+
+.shop-card-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 11px;
+  padding: 2px 8px;
+  background: #fef3f2;
+  color: #e74c3c;
+  border-radius: 10px;
+}
+
+/* ========== ShopList Filter ========== */
+.shop-list-page {
+  padding-top: 12px;
+}
+
+.filter-bar {
+  padding: 0 16px;
+}
+
+.filter-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.filter-label {
+  font-size: 13px;
+  color: #888;
+  width: 36px;
+  flex-shrink: 0;
+  padding-top: 6px;
+}
+
+.filter-options {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 5px 14px;
+  border-radius: 16px;
+  font-size: 13px;
+  background: #f5f5f5;
+  color: #666;
+  transition: all 0.15s;
+}
+
+.filter-btn.active {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.shop-count {
+  font-size: 12px;
+  color: #aaa;
+  padding: 4px 16px 8px;
+}
+
+/* ========== ShopDetail ========== */
+.back-btn {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 13px;
+}
+
+/* Photo Carousel */
+.photo-carousel {
+  position: relative;
+}
+
+.photo-slide {
+  height: 280px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.photo-nav {
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  font-size: 32px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 8px;
+  transition: background 0.2s;
+}
+
+.photo-nav:active {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.photo-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #fff;
+  width: 18px;
+  border-radius: 3px;
+}
+
+/* Detail Sections */
+.detail-section {
+  padding: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.detail-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #222;
+}
+
+.detail-type {
+  font-size: 12px;
+  background: #fef3f2;
+  color: #e74c3c;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.detail-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.rating-score {
+  font-weight: 700;
+  color: #333;
+}
+
+.rating-count {
+  color: #999;
+  font-size: 12px;
+}
+
+.detail-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.detail-address,
+.detail-hours {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 4px;
+}
+
+.detail-desc {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.7;
+  margin-top: 8px;
+}
+
+/* Service List */
+.section-subtitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.service-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px dashed #f0f0f0;
+}
+
+.service-item:last-child {
+  border-bottom: none;
+}
+
+.service-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.service-name {
+  font-size: 15px;
+  color: #333;
+  font-weight: 500;
+}
+
+.service-duration {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.service-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #e74c3c;
+}
+
+.service-price::before {
+  content: "¥";
+  font-size: 13px;
+}
+
+/* Reviews */
+.review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.review-card {
+  background: #fafafa;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.review-author {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.review-stars {
+  color: #f59e0b;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.review-content {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.review-date {
+  display: block;
+  font-size: 12px;
+  color: #bbb;
+  margin-top: 6px;
+}
+
+/* Photo Placeholders */
+.shop-card-placeholder {
+  background: linear-gradient(135deg, #fdf2f2, #fef5f5, #faf0f0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-text {
+  color: #d4a0a0;
+  font-size: 14px;
+}
+
+.photo-placeholder {
+  background: linear-gradient(135deg, #fdf2f2, #fef5f5, #faf0f0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-large {
+  color: #d4a0a0;
+  font-size: 18px;
+}
+
+/* Navigation Button */
+.nav-btn {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  background: #f0f7ff;
+  color: #2196f3;
+  border: 1px solid #bbdefb;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.nav-btn:active {
+  background: #e3f2fd;
+}
+
+/* Detail Actions */
+.detail-actions {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ========== Buttons ========== */
+.action-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  transition: opacity 0.2s;
+}
+
+.action-btn:active {
+  opacity: 0.8;
+}
+
+.action-primary {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: #fff;
+}
+
+.action-secondary {
+  background: #f5f5f5;
+  color: #666;
+  border: 1px solid #eee;
+}
+
+/* ========== Wechat Contact ========== */
+.wechat-contact {
+  text-align: center;
+}
+
+.wechat-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f0f9f0;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.wechat-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #4caf50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.wechat-info {
+  flex: 1;
+  text-align: left;
+}
+
+.wechat-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.wechat-desc {
+  font-size: 12px;
+  color: #888;
+}
+
+.wechat-add-btn {
+  background: #4caf50;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.wechat-btn-compact {
+  width: 100%;
+  padding: 12px;
+  background: #f0f9f0;
+  color: #4caf50;
+  border: 1px solid #c8e6c8;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.wechat-btn-compact:active {
+  background: #e8f5e8;
+}
+
+.wechat-tip {
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* ========== Booking Form ========== */
+.booking-page {
+  padding-top: 0;
+}
+
+.booking-header {
+  padding: 16px;
+  text-align: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.booking-header h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.booking-header p {
+  font-size: 13px;
+  color: #999;
+}
+
+.booking-form {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #333;
+  background: #fafafa;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #e74c3c;
+  background: #fff;
+}
+
+.booking-form .action-btn {
+  margin-top: 8px;
+}
+
+/* ========== Booking Success ========== */
+.booking-success {
+  padding: 40px 16px;
+  text-align: center;
+}
+
+.success-icon {
+  font-size: 56px;
+  margin-bottom: 16px;
+}
+
+.booking-success h2 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.booking-success p {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.success-wechat-id {
+  background: #fef3f2;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.success-wechat-id strong {
+  color: #e74c3c;
+}
+
+.booking-success .action-btn {
+  margin-bottom: 10px;
+}
+
+/* ========== Toast ========== */
+.toast-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  z-index: 9999;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.toast-container.toast-show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.toast-content {
+  background: rgba(0, 0, 0, 0.82);
+  color: #fff;
+  padding: 16px 24px;
+  border-radius: 10px;
+  font-size: 15px;
+  line-height: 1.7;
+  text-align: center;
+  max-width: 280px;
+  word-break: break-all;
+}
+
+/* ========== Misc ========== */
+.back-btn-static {
+  display: inline-flex;
+  margin: 12px;
+}
+
+@media (max-width: 480px) {
+  .hero-banner {
+    padding: 20px 12px;
+  }
+  .hero-title {
+    font-size: 20px;
+  }
+  .section {
+    padding: 12px;
+  }
+  .photo-slide {
+    height: 220px;
+  }
+  .shop-card-img {
+    height: 140px;
+  }
+}
